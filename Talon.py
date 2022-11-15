@@ -262,6 +262,19 @@ class Talon(AgentType):
 
             elif Command == COMMAND_OUTPUT:
 
+                print(response_parser.length)
+                print(response_parser.buffer)
+                #cmdlen = struct.unpack( ">i", start )
+                cmdout = response_parser.buffer[4:]
+                #print(len(cmdout))
+                #print(response_parser.length)
+                cmdout_utf8 = cmdout.decode('gbk').encode('utf-8')
+                start = pack( ">i", len(cmdout_utf8) )
+                response_parser.length=response_parser.length-len(cmdout)+len(cmdout_utf8)
+                response_parser.buffer=start+cmdout_utf8
+                print(response_parser.length)
+                print(response_parser.buffer)
+
                 Output = response_parser.parse_str()
                 print( "[*] Output: \n" + Output )
 
@@ -294,7 +307,7 @@ def main():
 
     print( "[*] Connect to Havoc service api" )
     Havoc_Service = HavocService(
-        endpoint="ws://192.168.0.148:40056/service-endpoint",
+        endpoint="ws://10.1.2.131:40056/service-endpoint",
         password="service-password"
     )
      

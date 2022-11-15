@@ -57,5 +57,6 @@ typedef struct _INSTANCE {
 } INSTANCE, *PINSTANCE;
 
 extern INSTANCE Instance;
+void entry();
 
 #endif
