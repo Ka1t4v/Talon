@@ -1,2 +1,4 @@
-Agent/Bin/*
-Shellcode/Bin/*
+**/*.dll
+**/*.exe
+**/*.bin
+**/*.o
