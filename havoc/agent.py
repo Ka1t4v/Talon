@@ -86,7 +86,14 @@ class Parser:
         return buf
 
     def parse_str( self ) -> str:
-        return self.parse_bytes().decode( 'utf-8' )
+        content = self.parse_bytes()
+        try:
+            content = content.decode( 'utf-8' )
+        except:
+            print('test gbk decode')
+            content = content.decode( 'gbk' )
+
+        return content
 
 class CommandParam:
     Name: str
@@ -149,8 +156,8 @@ class AgentType:
     def generate( self, config: dict ) -> None:
         pass
 
-    def download_file( self, agent_id: str, file_name: str, size: int, content: str ) -> None:
-        ContentB64 = base64.b64encode( content.encode( 'utf-8' ) ).decode( 'utf-8' )
+    def download_file( self, agent_id: str, file_name: str, size: int, content: bytes ) -> None:
+        ContentB64 = base64.b64encode( content ).decode( 'utf-8' )
 
         self._Service_instance.Socket.send( 
             json.dumps( 

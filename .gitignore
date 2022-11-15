@@ -1,5 +1,3 @@
 Agent/Bin/*
-!Agent/Bin/.gitkeep
 Shellcode/Bin/*
-!Shellcode/Bin/.gitkeep
 .vscode/*
