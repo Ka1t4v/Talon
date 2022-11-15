@@ -1,5 +1,3 @@
-Agent/Bin/*
-Shellcode/Bin/*
-.vscode
-!Agent/Bin
-!Shellcode/Bin
+Agent/Bin/
+Shellcode/Bin/
+.vscode/
