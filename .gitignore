@@ -1,3 +1,4 @@
 Agent/Bin/*
 Shellcode/Bin/*
 .vscode/*
+havoc/__pycache__/*

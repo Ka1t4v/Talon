@@ -1,3 +1,9 @@
+[+] 增加了dll和shellcode的实现
+
+[+] 修复了下载文件和命令结果输出的编码问题
+
+
+
 # Talon
 
 Talon is a 3rd party agent for Havoc written in C. It's very minimalistic and it's meant to show how to work with the Havoc service api.
@@ -15,10 +21,3 @@ start agent handler:
 ```
 python Talon.py
 ```
-
-[+] 增加了dll和shellcode的实现
-
-[+] 修复了下载文件和命令结果输出的编码问题
-
-
-
